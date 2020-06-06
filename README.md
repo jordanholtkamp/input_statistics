@@ -25,10 +25,13 @@ There is an error count in the output. The program only accepts positive integer
 If the user ran the program as follows:<br>
 `java Statistics 12 -7 8 96 43 0 2 18`<br>
 The output would be as follows:<br>
-```Positive Integer count: 6
+```
+Positive Integer count: 6
 Total input count: 8
 Minimum: 2
 Maximum: 96
 Mean: 29.83
 Median: 15.0
-Errors: 2```
+Errors: 2
+```
+This is because we entered a negative number, and zero, and both are not positive. So we see the total input count is 8, but the positive integer count is only 6, and the error count is 2.
