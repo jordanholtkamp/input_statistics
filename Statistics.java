@@ -16,7 +16,7 @@ class Statistics {
       }
     }
 
-    System.out.println(numList);
+//    System.out.println(numList);
 
     System.out.println("Positive Integer count: " + numList.size());
     System.out.println("Total input count: " + (numList.size() + errors));

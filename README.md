@@ -35,3 +35,9 @@ Median: 15.0
 Errors: 2
 ```
 This is because we entered a negative number, and zero, and both are not positive. So we see the total input count is 8, but the positive integer count is only 6, and the error count is 2.
+
+## Assumptions
+The instructions were vague in some areas when it came to building out the program. So here are some assumptions I made when writing the code:
+- If the user has an error in their input, we will not count that in any of the calculations, except the error total.
+- Since zero is not technically positive, that will also be counted as an error and not be taken into account in calculation if entered by a user.
+- The program sorts the integers in ascending order before finding the median.
