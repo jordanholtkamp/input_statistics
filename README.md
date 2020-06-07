@@ -1,9 +1,8 @@
 # input_statistics
-A simple command line program in Java 14 for a potential employer. 
+A simple command line program written in Java 14 for a potential employer. 
 
 ## Summary
 This program takes user input from the command line. The user inputs a set of positive integers, and the program will execute calculations on these integers. The calculations it runs on the integers are as follows:
-
 - Total input count
 - Positive integer count
 - Minimum
