@@ -46,3 +46,4 @@ The instructions were vague in some areas when it came to building out the progr
 - If the user has an error in their input, we will not count that in any of the calculations. It will be counted in the error total.
 - Since zero is not technically positive, that will also be counted as an error and not be taken into account in calculations.
 - The program sorts the integers in ascending order before finding the median.
+- The instructions asked for one of the outputs to just be `count`. I wanted to make it more explicit which inputs were actually taken into account for the calculations. I changed the output to include `Total input count` and `Positive integer count` to be more explicit.
