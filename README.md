@@ -1,10 +1,10 @@
 # input_statistics
-A simple command line program in Java 14 for a potential employer. 
+A simple command line program written in Java 14 for a potential employer. 
 
 ## Summary
 This is a program that takes user input from the command line. The user inputs a set of integers, and the program will execute calculations on the integers. The calculations it runs on the integers are as follows:
 
-- Positive Integer count
+- Positive integer count
 - Total input count
 - Minimum
 - Maximum
@@ -12,7 +12,7 @@ This is a program that takes user input from the command line. The user inputs a
 - Median
 - Errors
 
-## Running the program
+## Running the Program
 1. Clone this repo
 1. Navigate into the project directory
 1. Compile the code with the command `javac Statistics.java`
