@@ -16,7 +16,7 @@ This program takes user input from the command line. The user inputs a set of po
     1. `git clone https://github.com/jordanholtkamp/input_statistics.git`
 1. Navigate into the project directory
     1. `cd input_statistics`
-1. Compile the code 
+1. Compile the code
     1. `javac Statistics.java`
 1. Run the program with your input in this format `java Statistics x x x x` and replace the `x`'s with integers with a space in between them.
     1. Examples
