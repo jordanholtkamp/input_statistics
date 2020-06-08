@@ -1,13 +1,20 @@
 import java.util.*;
 
-class Statistics {
+public class Statistics {
+
+  /**
+   * Iterates through arguments,
+   * if the integer is positive, it adds it to the arrayList created at the top of the method.
+   * If negative or zero, we add one to the error count
+   * The catch to add one for the errors is for decimals or a string that cannot be parsed to an int
+   */
   static void getNumbers(String [] args) {
-    ArrayList<Integer> numList=new ArrayList<>();
+    ArrayList<Integer> numList = new ArrayList<>();
     int errors = 0;
 
-    for (String s : args) {
+    for (String arg : args) {
       try {
-        int newNum = Integer.parseInt(s);
+        int newNum = Integer.parseInt(arg);
         if (newNum > 0) {
           numList.add(newNum);
         } else errors += 1;
@@ -16,18 +23,19 @@ class Statistics {
       }
     }
 
-//    System.out.println(numList);
-
-    System.out.println("Positive Integer count: " + numList.size());
     System.out.println("Total input count: " + (numList.size() + errors));
+    System.out.println("Positive integer count: " + numList.size());
     System.out.println("Minimum: " + calculateMin(numList));
     System.out.println("Maximum: " + calculateMax(numList));
     System.out.println("Mean: " + calculateAverage(numList));
     System.out.println("Median: " + calculateMedian(numList));
-    System.out.println("Errors: " + totalErrors(errors));
+    System.out.println("Errors: " + totalErrorsToString(errors));
   }
 
-  private static String calculateMax(ArrayList<Integer> numList) {
+  /**
+   * These methods are public for testing purposes
+   */
+  public static String calculateMax(ArrayList<Integer> numList) {
     String maximum;
     if (!numList.isEmpty()) {
       int max = Collections.max(numList);
@@ -36,7 +44,7 @@ class Statistics {
     return maximum;
   }
 
-  private static String calculateMin(ArrayList<Integer> numList) {
+  public static String calculateMin(ArrayList<Integer> numList) {
     String minimum;
     if (!numList.isEmpty()) {
       int min = Collections.min(numList);
@@ -45,20 +53,36 @@ class Statistics {
     return minimum;
   }
 
-  private static String totalErrors(int errors) {
+  private static String totalErrorsToString(int errors) {
+    /**
+     * Just converts the error total to a string, and if none, returns n/a
+     */
     if (errors > 0) {
-      String s = String.valueOf(errors);
-      return s;
+      String errorCountToString = String.valueOf(errors);
+      return errorCountToString;
     } else return "n/a";
   }
 
-  private static String calculateMedian(ArrayList<Integer> numList) {
+  public static String calculateMedian(ArrayList<Integer> numList) {
     double roundedMedian = 0;
+
+    /**
+     * Sorts the arrayList before finding median
+     */
     Collections.sort(numList);
+
     if (numList.isEmpty()) {return "n/a";};
+
+    /**
+     * Checks if element count is even
+     */
     if (numList.size() % 2 == 0) {
-      int lowerMiddle = numList.get(numList.size() / 2);
-      int upperMiddle = numList.get((numList.size() / 2) - 1);
+
+      /**
+       * gets the two middle numbers of the arrayList
+       */
+      double lowerMiddle = numList.get(numList.size() / 2);
+      double upperMiddle = numList.get((numList.size() / 2) - 1);
       double avgOfMiddles = (lowerMiddle + upperMiddle) / 2;
       double roundedAvg = Math.round(avgOfMiddles * 100.0) / 100.0;
       roundedMedian += roundedAvg;
@@ -66,23 +90,23 @@ class Statistics {
       double median = Math.round(numList.get(((numList.size() + 1) / 2) - 1) * 100.0 / 100.0);
       roundedMedian += median;
     }
-    String s = String.valueOf(roundedMedian);
-    return s;
+    String medianToString = String.valueOf(roundedMedian);
+    return medianToString;
   }
 
-  private static String calculateAverage(ArrayList<Integer> numList) {
-    Integer sum = 0;
+  public static String calculateAverage(ArrayList<Integer> numList) {
+    Integer sumOfInputs = 0;
     if(!numList.isEmpty()) {
       for (Integer num : numList) {
-        sum += num;
+        sumOfInputs += num;
       }
     } else return "n/a";
     
-    double avg = sum.doubleValue() / numList.size();
+    double avg = sumOfInputs.doubleValue() / numList.size();
     double roundedAvg = Math.round(avg * 100.0) / 100.0;
-    String s = String.valueOf((roundedAvg));
+    String avgToString = String.valueOf((roundedAvg));
   
-    return s;
+    return avgToString;
   }
 
   public static void main(String[] args) {
