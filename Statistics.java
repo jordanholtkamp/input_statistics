@@ -53,34 +53,26 @@ public class Statistics {
     return minimum;
   }
 
-  private static String totalErrorsToString(int errors) {
     /**
      * Just converts the error total to a string, and if none, returns n/a
      */
+  private static String totalErrorsToString(int errors) {
     if (errors > 0) {
       String errorCountToString = String.valueOf(errors);
       return errorCountToString;
     } else return "n/a";
   }
 
-  public static String calculateMedian(ArrayList<Integer> numList) {
-    double roundedMedian = 0;
-
     /**
      * Sorts the arrayList before finding median
+     * Checks if element count is even, and gets the two middle numbers of the arrayList to find the median
+     * If it is odd, just takes the middle number
      */
+  public static String calculateMedian(ArrayList<Integer> numList) {
+    double roundedMedian = 0;
     Collections.sort(numList);
-
     if (numList.isEmpty()) {return "n/a";};
-
-    /**
-     * Checks if element count is even
-     */
     if (numList.size() % 2 == 0) {
-
-      /**
-       * gets the two middle numbers of the arrayList
-       */
       double lowerMiddle = numList.get(numList.size() / 2);
       double upperMiddle = numList.get((numList.size() / 2) - 1);
       double avgOfMiddles = (lowerMiddle + upperMiddle) / 2;
